@@ -32,27 +32,27 @@ public class SwaggerConfig {
         authorizationScopes[0] = authorizationScope;
         return Arrays.asList(new SecurityReference("osaAPIKey", authorizationScopes));
     }
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .securityContexts(Arrays.asList(securityContext()))
-                .securitySchemes(Arrays.asList(apiKey()))
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("zcoa.service.sync.controller"))
-                .paths(PathSelectors.regex("/api/.*"))
-                .build();
-    }
-    private ApiInfo apiInfo() {
-        return new ApiInfo(
-                "Ops Sync App API",
-                "Ops Sync App API",
-                "1.0",
-                "Terms of service",
-                new Contact("Dasvision", "www.dasvision.vn", "tridv@dasvision.vn"),
-                "License of API",
-                "API license URL",
-                Collections.emptyList());
-    }
+//    @Bean
+//    public Docket api() {
+//        return new Docket(DocumentationType.SWAGGER_2)
+//                .apiInfo(apiInfo())
+//                .securityContexts(Arrays.asList(securityContext()))
+//                .securitySchemes(Arrays.asList(apiKey()))
+//                .select()
+//                .apis(RequestHandlerSelectors.basePackage("zcoa.service.sync.controller"))
+//                .paths(PathSelectors.regex("/api/.*"))
+//                .build();
+//    }
+//    private ApiInfo apiInfo() {
+//        return new ApiInfo(
+//                "Ops Sync App API",
+//                "Ops Sync App API",
+//                "1.0",
+//                "Terms of service",
+//                new Contact("Dasvision", "www.dasvision.vn", "tridv@dasvision.vn"),
+//                "License of API",
+//                "API license URL",
+//                Collections.emptyList());
+//    }
 
 }
